@@ -25,9 +25,11 @@ buildNumber.properties
 .classpath
 .project
 .vscode/
+
 .factorypath
 
 #
 # Added
 #
 lib/desktop-1.0.jar
+tasks.json
