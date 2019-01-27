@@ -5,12 +5,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
+import weaponmaster.WeaponMaster;
 
 public class StanceSwitch extends CustomCard {
-    public static final String ID = "wp_StanceSwitch_Card";
+    public static final String ID = WeaponMaster.makeID("StanceSwitch");
     public static final String NAME = "Switch Stance";
     public static final String DESCRIPTION = "";
-    public static final String IMG = "";
+    public static final String IMG = WeaponMaster.makeResourcePath("cards/placeholder.png");
     public static final int COST = 0;
     public static final AbstractCard.CardType CARD_TYPE = AbstractCard.CardType.SKILL;
     public static final AbstractCard.CardColor CARD_COLOR = AbstractCard.CardColor.RED;
@@ -33,7 +34,7 @@ public class StanceSwitch extends CustomCard {
     }
 
     @Override
-    public void use(AbstractPlayer arg0, AbstractMonster arg1) {
+    public void use(AbstractPlayer p, AbstractMonster m) {
         
     }
 

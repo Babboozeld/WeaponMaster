@@ -1,0 +1,13 @@
+{
+    "WeaponMaster:WeaponMasterPlayer": {
+        "NAMES": [
+            "The Weapon Master",
+            "The Weapon Master"
+        ],
+        "TEXT": [
+            "A skilled fighter that mastered the arts of his weapons, that knows when to defend and attack.",
+            "NL Spire heart text.",
+            "vampire text"
+        ]
+    }     
+}

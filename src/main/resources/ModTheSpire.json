@@ -4,5 +4,5 @@
     "description": "A mod that adds the Weapon Master character to the game.",
     "version": "0.1.0",
     "author_list": ["Babboozeld"],
-    "dependencies": ["modthespire","basemod","stslib"]
+    "dependencies": ["basemod","stslib"]
 }

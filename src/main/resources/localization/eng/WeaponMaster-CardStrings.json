@@ -1,0 +1,10 @@
+{
+    "WeaponMaster:ArtOfWar": {
+      "NAME": "Art of War",
+      "DESCRIPTION": "Gain !M! strength."
+    },
+    "WeaponMaster:LessonsOfWar": {
+      "NAME": "Lessons of War",
+      "DESCRIPTION": "Gain !M! dexterity."
+    }
+}

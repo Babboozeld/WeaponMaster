@@ -8,18 +8,23 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import basemod.abstracts.CustomPlayer;
 import weaponmaster.patches.PlayerClassEnum;
-import weaponmaster.patches.WeaponMasterCardEnum;
+import weaponmaster.WeaponMaster;
+import weaponmaster.patches.AbstractCardEnum;
 
 public class WeaponMasterPlayer extends CustomPlayer {
 
-    public static final String NAME = "The Weapon Master";
-    public static final String DESCRIPTION = "A skilled fighter that mastered the arts of his weapons, that knows when to defend and attack.";
+    public static final String ID = WeaponMaster.makeID("WeaponMasterPlayer");
+    public static final CharacterStrings CHARACTER_STRINGS = CardCrawlGame.languagePack.getCharacterString(ID);
+    public static final String[] NAMES = CHARACTER_STRINGS.NAMES;
+    public static final String[] TEXT = CHARACTER_STRINGS.TEXT;
 
     //starter values
     public static final int STARTER_HP = 75;
@@ -32,15 +37,15 @@ public class WeaponMasterPlayer extends CustomPlayer {
 
     //player assets
     public static final String PLAYER_TEXTURES_LOCATION = "images/char/WeaponMaster/";
-    public static final String PLAYER_BUTTON = "necromancerButton.png";
-    public static final String PLAYER_PORTRAIT = "necromancerPortrait.jpg";
+    public static final String PLAYER_BUTTON = "characterButton.png";
+    public static final String PLAYER_PORTRAIT = "characterPortrait.jpg";
     public static final String PLAYER_SHOULDER_1 = "shoulder.png";
     public static final String PLAYER_SHOULDER_2 = "shoulder2.png";
     public static final String PLAYER_CORPSE = "corpse.png";
     public static final String PLAYER_SKELETON_ATLAS = "skeleton.atlas";
     public static final String PLAYER_SKELETON_JSON = "skeleton.json";
     public static final String PLAYER_MODEL = "model.g3dj";
-    public static final String PLAYER_ANIMATION = "Necromancer_Render|idle";
+    public static final String PLAYER_ANIMATION = "character_Render|idle";
     public static final String[] ORBTEXTURES = {
         PLAYER_TEXTURES_LOCATION + "orb/layer1.png",
         PLAYER_TEXTURES_LOCATION + "orb/layer2.png",
@@ -78,17 +83,17 @@ public class WeaponMasterPlayer extends CustomPlayer {
 
     @Override
     public CardColor getCardColor() {
-        return WeaponMasterCardEnum.WEAPONMASTER_COLOR;
+        return AbstractCardEnum.WEAPONMASTER_COLOR;
     }
 
     @Override
     public Color getCardRenderColor() {
-        return Color.MAROON;
+        return Color.MAROON;                                    // <<<
     }
 
     @Override
     public Color getCardTrailColor() {
-        return WeaponMasterCardEnum.CARD_COLOR;
+        return AbstractCardEnum.CARD_BG_COLOR;                  // <<<
     }
 
     @Override
@@ -103,18 +108,18 @@ public class WeaponMasterPlayer extends CustomPlayer {
 
     @Override
     public CharSelectInfo getLoadout() {
-        return new CharSelectInfo(NAME, DESCRIPTION, STARTER_HP, MAX_HP, MAX_ORBS, GOLD, CARD_DRAW,
+        return new CharSelectInfo(NAMES[0], TEXT[0], STARTER_HP, MAX_HP, MAX_ORBS, GOLD, CARD_DRAW,
             this, getStartingRelics(), getStartingDeck(), false);
     }
 
     @Override
     public String getLocalizedCharacterName() {
-        return NAME;
+        return NAMES[0];
     }
 
     @Override
     public Color getSlashAttackColor() {
-        return WeaponMasterCardEnum.CARD_COLOR;
+        return AbstractCardEnum.CARD_BG_COLOR;                     // <<<
     }
 
     @Override
@@ -124,7 +129,7 @@ public class WeaponMasterPlayer extends CustomPlayer {
 
     @Override
     public String getSpireHeartText() {
-        return "NL Spire heart text.";
+        return TEXT[1];                              // <<<
     }
 
     @Override
@@ -149,17 +154,17 @@ public class WeaponMasterPlayer extends CustomPlayer {
 
     @Override
     public String getTitle(PlayerClass arg0) {
-        return NAME;
+        return NAMES[1];
     }
 
     @Override
     public String getVampireText() {
-        return "vampire text";
+        return TEXT[2];                                       // <<<
     }
 
     @Override
     public AbstractPlayer newInstance() {
-        return new WeaponMasterPlayer(NAME, PlayerClassEnum.WEAPON_MASTER_PLAYER);
+        return new WeaponMasterPlayer(this.name, PlayerClassEnum.WEAPON_MASTER_PLAYER);
     }
     
 }
