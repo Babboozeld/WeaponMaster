@@ -6,5 +6,9 @@
     "WeaponMaster:LessonsOfWar": {
       "NAME": "Lessons of War",
       "DESCRIPTION": "Gain !M! dexterity."
+    },
+    "WeaponMaster:CrossingSwords": {
+      "NAME": "Crossing Swords",
+      "DESCRIPTION": "Gain !M! thorns."
     }
 }
