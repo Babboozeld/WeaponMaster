@@ -1,4 +1,9 @@
 {
+  "WeaponMaster:StanceSwitch": {
+    "NAME": "Stance Switch",
+    "DESCRIPTION": "Switch Stance.",
+    "UPGRADE_DESCRIPTION": "Switch Stance. NL Retain."
+  },
   "WeaponMaster:Smack": {
     "NAME": "Smack",
     "DESCRIPTION": "Deal !D! damage. NL #yStanceA: Apply !M! Vulnerable. NL #yStanceD Apply !M! Weak."
@@ -23,6 +28,10 @@
   "WeaponMaster:CrossingSwords": {
     "NAME": "Crossing Swords",
     "DESCRIPTION": "Gain !M! dexterity."
+  },
+  "WeaponMaster:TheHighGround": {
+    "NAME": "The High Ground",
+    "DESCRIPTION": "when in offencive stance gain !M! block for every attack played in a round."
   },
   "WeaponMaster:HammerAndAnvil": {
     "NAME": "Hammer and Anvil",

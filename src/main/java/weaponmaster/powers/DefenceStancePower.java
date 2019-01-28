@@ -10,7 +10,7 @@ import weaponmaster.WeaponMaster;
 
 public class DefenceStancePower extends AbstractPower {
 
-    public static final String ID_NAME = WeaponMaster.makeID("DefendStancePower");
+    public static final String ID_NAME = WeaponMaster.makeID("DefenceStancePower");
     public static final PowerStrings POWER_STRINGS = CardCrawlGame.languagePack.getPowerStrings(ID_NAME);
     public static final String NAME = POWER_STRINGS.NAME;
     public static final String IMG = WeaponMaster.makeResourcePath("power/placeholder.png");

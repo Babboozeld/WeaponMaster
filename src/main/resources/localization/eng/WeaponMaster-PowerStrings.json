@@ -1,10 +1,14 @@
 {
-    "theDefault:AttackStancePower": {
-            "NAME": "Attack",
-            "DESCRIPTIONS": ["You applied ", " keyword.", " keywords."]
+    "theDefault:OffenceStancePower": {
+        "NAME": "Offence Stance",
+        "DESCRIPTIONS": ["You applied ", " keyword.", " keywords."]
     },
-    "theDefault:DefendStancePower": {
-            "NAME": "Defend",
-            "DESCRIPTIONS": ["At the start of your turn, TOUCH ", " enemy." , " enemies."]
+    "theDefault:GainBlockByOffenceAttackPower": {
+        "NAME": "GainBlockByOffenceAttackPower",
+        "DESCRIPTIONS": ["You applied ", " keyword.", " keywords."]
+    },
+    "theDefault:DefenceStancePower": {
+        "NAME": "Defence Stance",
+        "DESCRIPTIONS": ["At the start of your turn, TOUCH ", " enemy." , " enemies."]
     }
 }

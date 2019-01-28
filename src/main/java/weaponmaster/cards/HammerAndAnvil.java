@@ -27,8 +27,6 @@ public class HammerAndAnvil extends CustomCard {
     private static final int AMOUNT = 2;
     private static final int UPGRADE_PLUS_AMOUNT = 1;
 
-    public int drawAmount;
-
     public HammerAndAnvil() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CARD_TYPE, CARD_COLOR, CARD_RARITY, CARD_TARGET);
         this.magicNumber = this.baseMagicNumber = AMOUNT;

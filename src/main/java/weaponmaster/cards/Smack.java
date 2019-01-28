@@ -56,18 +56,18 @@ public class Smack extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage)));
         if (p instanceof WeaponMasterPlayer){
             AbstractPower effect = null;
             switch (((WeaponMasterPlayer)p).stance) {
-                    case ATTACK: 
+                    case OFFENCE: 
                     effect = new VulnerablePower(m, this.magicNumber, false);
                     break;
-                case DEFEND:
+                case DEFENCE:
                     effect = new WeakPower(m, this.magicNumber, false);
                     break;
             }
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, effect, this.magicNumber));
         }
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage)));
     }
 }

@@ -1,0 +1,12 @@
+{
+    "ChanceStance": {
+      "NAMES":[
+        "chance_stance",
+        "UNUSED_RESERVE",
+        "UNUSED_RESERVE",
+        "UNUSED_RESERVE",
+        "UNUSED_RESERVE"
+      ],
+      "DESCRIPTION": "Chances your stance."
+    }
+  }

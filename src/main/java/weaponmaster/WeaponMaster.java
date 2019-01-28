@@ -1,22 +1,30 @@
 package weaponmaster;
 
+import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
+import java.util.Map;
+
+import com.badlogic.gdx.Gdx;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.localization.Keyword;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 
 import basemod.BaseMod;
 import basemod.interfaces.EditCharactersSubscriber;
+import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
-
 import weaponmaster.characters.WeaponMasterPlayer;
 import weaponmaster.patches.AbstractCardEnum;
 import weaponmaster.patches.PlayerClassEnum;
 
 @SpireInitializer
-public class WeaponMaster implements PostInitializeSubscriber, EditCharactersSubscriber, EditStringsSubscriber{ //EditCardsSubscriber, EditStringsSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber
+public class WeaponMaster implements PostInitializeSubscriber, EditCharactersSubscriber, EditStringsSubscriber, EditKeywordsSubscriber{ //EditCardsSubscriber, EditStringsSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber
 
     public static final String ASSETS = "images";
     public static final String MOD_NAME = "WeaponMaster";
@@ -65,6 +73,21 @@ public class WeaponMaster implements PostInitializeSubscriber, EditCharactersSub
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "localization/eng/WeaponMaster-CharacterStrings.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, "localization/eng/WeaponMaster-PowerStrings.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, "localization/eng/WeaponMaster-RelicStrings.json");
+    }
+
+    @Override
+    public void receiveEditKeywords() {
+        Type typeToken = new TypeToken<Map<String, Keyword>>(){}.getType();
+        Gson gson = new Gson();
+        String strings = loadJson("localization/eng/WeaponMaster-KeywordStrings.json");
+        @SuppressWarnings("unchecked")
+        Map<String,Keyword> keywords = (Map<String,Keyword>)gson.fromJson(strings, typeToken);
+        for (Keyword kw : keywords.values()) {
+            BaseMod.addKeyword(kw.NAMES, kw.DESCRIPTION);
+        }
+    }
+    private static String loadJson(String jsonPath) {
+        return Gdx.files.internal(jsonPath).readString(String.valueOf(StandardCharsets.UTF_8));
     }
     
 }

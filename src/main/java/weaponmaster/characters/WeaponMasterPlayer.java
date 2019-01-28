@@ -70,7 +70,7 @@ public class WeaponMasterPlayer extends CustomPlayer {
     public Stance stance = Stance.OFFENCE;
 
     public WeaponMasterPlayer(String name, PlayerClass setClass) {
-        super(name, setClass, ORBTEXTURES, PLAYER_TEXTURES_LOCATION + ORBVFX_LOCATION, PLAYER_TEXTURES_LOCATION + PLAYER_MODEL, PLAYER_ANIMATION);
+        super(name, setClass, ORBTEXTURES, PLAYER_TEXTURES_LOCATION + ORBVFX_LOCATION, null);//PLAYER_TEXTURES_LOCATION + PLAYER_MODEL, PLAYER_ANIMATION);
         
         this.dialogX = this.drawX + 0.0f * Settings.scale;              //< ?
         this.dialogY = this.drawY + 170.0f * Settings.scale;
@@ -81,7 +81,7 @@ public class WeaponMasterPlayer extends CustomPlayer {
 
     @Override
     public void doCharSelectScreenSelectEffect() {
-
+        
     }
 
     @Override

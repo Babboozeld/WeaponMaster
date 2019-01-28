@@ -1,8 +1,6 @@
 package weaponmaster.cards;
 
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -30,7 +28,7 @@ public class WarOfAttrition extends CustomCard {
 
     public WarOfAttrition() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CARD_TYPE, CARD_COLOR, CARD_RARITY, CARD_TARGET);
-        this.baseDamage = this.damage = AMOUNT;
+        this.baseMagicNumber = this.magicNumber = AMOUNT;
     }
 
     @Override
@@ -42,15 +40,13 @@ public class WarOfAttrition extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_AMOUNT);
+            this.upgradeMagicNumber(UPGRADE_PLUS_AMOUNT);
             this.initializeDescription();
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        /*for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(mo, new DamageInfo(p, this.damage)));
-        }*/
+        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, new com.megacrit.cardcrawl.powers.CombustPower(p, 0, this.magicNumber), this.magicNumber));
     }
 }

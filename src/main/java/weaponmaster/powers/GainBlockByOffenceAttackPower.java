@@ -12,32 +12,35 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import weaponmaster.WeaponMaster;
+import weaponmaster.WeaponMaster.Stance;
+import weaponmaster.characters.WeaponMasterPlayer;
 
-public class GainBlockByOffenceAttack extends AbstractPower {
+public class GainBlockByOffenceAttackPower extends AbstractPower {
 
-    public static final String ID_NAME = WeaponMaster.makeID("DefendStancePower");
+    public static final String ID_NAME = WeaponMaster.makeID("GainBlockByOffenceAttackPower");
     public static final PowerStrings POWER_STRINGS = CardCrawlGame.languagePack.getPowerStrings(ID_NAME);
     public static final String NAME = POWER_STRINGS.NAME;
     public static final String IMG = WeaponMaster.makeResourcePath("power/placeholder.png");
     public static final String[] DESCRIPTION = POWER_STRINGS.DESCRIPTIONS;
 
-    public GainBlockByOffenceAttack(AbstractCreature owner) {
+    public GainBlockByOffenceAttackPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = ID_NAME;
         this.owner = owner;
         this.img = ImageMaster.loadImage(IMG);
         this.isTurnBased = false;
-
+        this.amount = amount;
         updateDescription();
-
         this.type = PowerType.BUFF;
     }
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         super.onUseCard(card, action);
-        if (card.type == CardType.ATTACK) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, amount));
+        if (this.owner instanceof WeaponMasterPlayer){
+            if (((WeaponMasterPlayer)this.owner).stance == Stance.OFFENCE && card.type == CardType.ATTACK) {
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, this.amount));
+            }
         }
     }
 
