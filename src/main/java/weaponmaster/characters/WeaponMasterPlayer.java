@@ -5,18 +5,22 @@ import java.util.ArrayList;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import basemod.abstracts.CustomPlayer;
 import weaponmaster.patches.PlayerClassEnum;
+import weaponmaster.powers.AttackStancePower;
 import weaponmaster.WeaponMaster;
+import weaponmaster.WeaponMaster.Stance;
 import weaponmaster.patches.AbstractCardEnum;
 
 public class WeaponMasterPlayer extends CustomPlayer {
@@ -60,6 +64,8 @@ public class WeaponMasterPlayer extends CustomPlayer {
         PLAYER_TEXTURES_LOCATION + "orb/layer5d.png"
     };
     public static final String ORBVFX_LOCATION = "orb/vfx.png";
+
+    public Stance stance = Stance.ATTACK;
 
     public WeaponMasterPlayer(String name, PlayerClass setClass) {
         super(name, setClass, ORBTEXTURES, PLAYER_TEXTURES_LOCATION + ORBVFX_LOCATION, PLAYER_TEXTURES_LOCATION + PLAYER_MODEL, PLAYER_ANIMATION);
@@ -167,4 +173,12 @@ public class WeaponMasterPlayer extends CustomPlayer {
         return new WeaponMasterPlayer(this.name, PlayerClassEnum.WEAPON_MASTER_PLAYER);
     }
     
+    //questionable
+    @Override
+    public void preBattlePrep() {
+        super.preBattlePrep();
+        this.stance = Stance.ATTACK;
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new AttackStancePower(this), 0));
+    }
+
 }

@@ -1,20 +1,26 @@
 package weaponmaster.powers;
 
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import weaponmaster.WeaponMaster;
 
 public class DefendStancePower extends AbstractPower {
     
-    public static final String NAME = "Defend Stance";
-    public static final String IDNAME = "wm_defend_power";
-    public static final String IMAGE = "";
-    public static final String DESCRIPTION = "";
+    public static final String ID_NAME = WeaponMaster.makeID("DefendStancePower");
+    public static final PowerStrings POWER_STRINGS = CardCrawlGame.languagePack.getPowerStrings(ID_NAME);
+    public static final String NAME = POWER_STRINGS.NAME;
+    public static final String IMG = WeaponMaster.makeResourcePath("power/placeholder.png");
+    public static final String[] DESCRIPTION = POWER_STRINGS.DESCRIPTIONS;
 
     public DefendStancePower(AbstractCreature owner){
         this.name = NAME;
-        this.ID = IDNAME;
+        this.ID = ID_NAME;
         this.owner = owner;
-        //this.img = 
+        this.img = ImageMaster.loadImage(IMG);
         this.isTurnBased = false;
 
         updateDescription();
@@ -24,7 +30,7 @@ public class DefendStancePower extends AbstractPower {
 
     @Override
 	public void updateDescription() {
-		this.description = DESCRIPTION;
+		this.description = DESCRIPTION[0];
     }
 
 }

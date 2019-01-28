@@ -1,14 +1,43 @@
 {
-    "WeaponMaster:ArtOfWar": {
-      "NAME": "Art of War",
-      "DESCRIPTION": "Gain !M! strength."
-    },
-    "WeaponMaster:LessonsOfWar": {
-      "NAME": "Lessons of War",
-      "DESCRIPTION": "Gain !M! dexterity."
-    },
-    "WeaponMaster:CrossingSwords": {
-      "NAME": "Crossing Swords",
-      "DESCRIPTION": "Gain !M! thorns."
-    }
+  "WeaponMaster:Smack": {
+    "NAME": "Smack",
+    "DESCRIPTION": "Deal !D! damage. NL #yStanceA: Apply !M! Vulnerable. NL #yStanceD Apply !M! Weak."
+  },
+  "WeaponMaster:Feint": {
+    "NAME": "Feint",
+    "DESCRIPTION": "Gain !M! strength."
+  },
+  "WeaponMaster:ArtOfWar": {
+    "NAME": "Art of War",
+    "DESCRIPTION": "Switch Stance. NL Draw 1 card.",
+    "UPGRADE_DESCRIPTION": "Switch Stance. NL Draw 2 cards."
+  },
+  "WeaponMaster:LessonsOfWar": {
+    "NAME": "Lessons of War",
+    "DESCRIPTION": "Gain !M! dexterity."
+  },
+  "WeaponMaster:WarOfAttrition": {
+    "NAME": "Lessons of War",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies."
+  },
+  "WeaponMaster:CrossingSwords": {
+    "NAME": "Crossing Swords",
+    "DESCRIPTION": "Gain !M! dexterity."
+  },
+  "WeaponMaster:HammerAndAnvil": {
+    "NAME": "Hammer and Anvil",
+    "DESCRIPTION": "Boost your equipment with !M! levels."
+  },
+  "WeaponMaster:Leap": {
+    "NAME": "Leap",
+    "DESCRIPTION": "!D! damage to ALL enemies NL stanceA: !D! damage !B! block NL stanceB: switch stance.",
+  },
+  "WeaponMaster:DefenceIsOffence": {
+    "NAME": "Defence is Offence",
+    "DESCRIPTION": "deal !D! damage. NL Switch Stance."
+  },
+  "WeaponMaster:OffenceIsDefence": {
+    "NAME": "Offence is Defence",
+    "DESCRIPTION": "Gain !B! block. NL Switch Stance."
+  }
 }

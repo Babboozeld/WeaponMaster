@@ -12,5 +12,12 @@
 		"DESCRIPTIONS": [
 			"Gain Dexterity equal to its level."
 		]
+	},
+	"WeaponMaster:PlayerEquipment": {
+		"NAME": "Equipment Lvl",
+		"FLAVOR": "The snake is a friend.",
+		"DESCRIPTIONS": [
+			"Gain Strength and Dexterity equal to equipment level."
+		]
 	}
 }

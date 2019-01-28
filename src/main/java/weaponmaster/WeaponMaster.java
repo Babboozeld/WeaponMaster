@@ -3,6 +3,8 @@ package weaponmaster;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.localization.RelicStrings;
 
 import basemod.BaseMod;
 import basemod.interfaces.EditCharactersSubscriber;
@@ -21,6 +23,10 @@ public class WeaponMaster implements PostInitializeSubscriber, EditCharactersSub
     //private static final String MODNAME = "Default Mod";
     //private static final String AUTHOR = "Gremious";
     //private static final String DESCRIPTION = "A base for Slay the Spire to start your own mod from, feat. the Default.";
+    
+    public enum Stance {
+        ATTACK, DEFEND
+    }
 
     public WeaponMaster() {
         BaseMod.subscribe(this);
@@ -57,6 +63,8 @@ public class WeaponMaster implements PostInitializeSubscriber, EditCharactersSub
     public void receiveEditStrings() {
         BaseMod.loadCustomStrings(CardStrings.class, "localization/eng/WeaponMaster-CardStrings.json");
         BaseMod.loadCustomStrings(CharacterStrings.class, "localization/eng/WeaponMaster-CharacterStrings.json");
+        BaseMod.loadCustomStrings(PowerStrings.class, "localization/eng/WeaponMaster-PowerStrings.json");
+        BaseMod.loadCustomStrings(RelicStrings.class, "localization/eng/WeaponMaster-RelicStrings.json");
     }
     
 

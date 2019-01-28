@@ -1,0 +1,10 @@
+{
+    "theDefault:AttackStancePower": {
+            "NAME": "Attack",
+            "DESCRIPTIONS": ["You applied ", " keyword.", " keywords."]
+    },
+    "theDefault:DefendStancePower": {
+            "NAME": "Defend",
+            "DESCRIPTIONS": ["At the start of your turn, TOUCH ", " enemy." , " enemies."]
+    }
+}

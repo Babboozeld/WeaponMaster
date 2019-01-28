@@ -1,4 +1,4 @@
-package weaponmaster.actions;
+package weaponmaster.actions.notused;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
