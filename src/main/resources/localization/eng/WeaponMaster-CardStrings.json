@@ -1,4 +1,12 @@
 {
+  "WeaponMaster:Strike": {
+    "NAME": "Switch",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "WeaponMaster:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! block."
+  },
   "WeaponMaster:StanceSwitch": {
     "NAME": "Stance Switch",
     "DESCRIPTION": "Switch Stance.",
@@ -45,8 +53,17 @@
     "NAME": "Defence is Offence",
     "DESCRIPTION": "Deal !D! damage. NL Switch Stance."
   },
+  "WeaponMaster:SpartanKick": {
+    "NAME": "Spartan Kick",
+    "DESCRIPTION": "Deal !D! damage."
+  },
   "WeaponMaster:OffenceIsDefence": {
     "NAME": "Offence is Defence",
     "DESCRIPTION": "Gain !B! block. NL Switch Stance."
+  },
+  "WeaponMaster:QuickReflexes": {
+    "NAME": "Quick Reflexes",
+    "DESCRIPTION": "Gain !B! block. NL #yStanceB: dexterity counts double.",
+    "UPGRADE_DESCRIPTION": "Gain !B! block. NL #yStanceB: dexterity counts triple."
   }
 }
