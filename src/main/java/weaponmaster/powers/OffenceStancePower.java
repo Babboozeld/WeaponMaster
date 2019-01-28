@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import weaponmaster.WeaponMaster;
 
-public class AttackStancePower extends AbstractPower {
+public class OffenceStancePower extends AbstractPower {
     
     public static final String ID_NAME = WeaponMaster.makeID("AttackStancePower");
     public static final PowerStrings POWER_STRINGS = CardCrawlGame.languagePack.getPowerStrings(ID_NAME);
@@ -16,7 +16,7 @@ public class AttackStancePower extends AbstractPower {
     public static final String IMG = WeaponMaster.makeResourcePath("power/placeholder.png");
     public static final String[] DESCRIPTION = POWER_STRINGS.DESCRIPTIONS;
 
-    public AttackStancePower(AbstractCreature owner){
+    public OffenceStancePower(AbstractCreature owner){
         this.name = NAME;
         this.ID = ID_NAME;
         this.owner = owner;

@@ -25,7 +25,7 @@ public class WeaponMaster implements PostInitializeSubscriber, EditCharactersSub
     //private static final String DESCRIPTION = "A base for Slay the Spire to start your own mod from, feat. the Default.";
     
     public enum Stance {
-        ATTACK, DEFEND
+        OFFENCE, DEFENCE
     }
 
     public WeaponMaster() {
@@ -61,11 +61,10 @@ public class WeaponMaster implements PostInitializeSubscriber, EditCharactersSub
 
     @Override
     public void receiveEditStrings() {
-        BaseMod.loadCustomStrings(CardStrings.class, "localization/eng/WeaponMaster-CardStrings.json");
-        BaseMod.loadCustomStrings(CharacterStrings.class, "localization/eng/WeaponMaster-CharacterStrings.json");
-        BaseMod.loadCustomStrings(PowerStrings.class, "localization/eng/WeaponMaster-PowerStrings.json");
-        BaseMod.loadCustomStrings(RelicStrings.class, "localization/eng/WeaponMaster-RelicStrings.json");
+        BaseMod.loadCustomStringsFile(CardStrings.class, "localization/eng/WeaponMaster-CardStrings.json");
+        BaseMod.loadCustomStringsFile(CharacterStrings.class, "localization/eng/WeaponMaster-CharacterStrings.json");
+        BaseMod.loadCustomStringsFile(PowerStrings.class, "localization/eng/WeaponMaster-PowerStrings.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class, "localization/eng/WeaponMaster-RelicStrings.json");
     }
     
-
 }

@@ -15,10 +15,12 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.abstracts.CustomPlayer;
 import weaponmaster.patches.PlayerClassEnum;
-import weaponmaster.powers.AttackStancePower;
+import weaponmaster.powers.OffenceStancePower;
+import weaponmaster.relics.PlayerEquipment;
 import weaponmaster.WeaponMaster;
 import weaponmaster.WeaponMaster.Stance;
 import weaponmaster.patches.AbstractCardEnum;
@@ -65,7 +67,7 @@ public class WeaponMasterPlayer extends CustomPlayer {
     };
     public static final String ORBVFX_LOCATION = "orb/vfx.png";
 
-    public Stance stance = Stance.ATTACK;
+    public Stance stance = Stance.OFFENCE;
 
     public WeaponMasterPlayer(String name, PlayerClass setClass) {
         super(name, setClass, ORBTEXTURES, PLAYER_TEXTURES_LOCATION + ORBVFX_LOCATION, PLAYER_TEXTURES_LOCATION + PLAYER_MODEL, PLAYER_ANIMATION);
@@ -153,8 +155,8 @@ public class WeaponMasterPlayer extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> startingRelics = new ArrayList<>();
-        //startingRelics.Add("relic id naam");
-        //UnlockTracker.markRelicAsSeen("Vampire_Amulet"); ?
+        startingRelics.add(PlayerEquipment.ID);
+        UnlockTracker.markRelicAsSeen(PlayerEquipment.ID);
         return startingRelics;
     }
 
@@ -177,8 +179,8 @@ public class WeaponMasterPlayer extends CustomPlayer {
     @Override
     public void preBattlePrep() {
         super.preBattlePrep();
-        this.stance = Stance.ATTACK;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new AttackStancePower(this), 0));
+        this.stance = Stance.OFFENCE;
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new OffenceStancePower(this), 0));
     }
 
 }

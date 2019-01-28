@@ -17,7 +17,7 @@
     "DESCRIPTION": "Gain !M! dexterity."
   },
   "WeaponMaster:WarOfAttrition": {
-    "NAME": "Lessons of War",
+    "NAME": "War of Attrition",
     "DESCRIPTION": "Deal !D! damage to ALL enemies."
   },
   "WeaponMaster:CrossingSwords": {
@@ -30,11 +30,11 @@
   },
   "WeaponMaster:Leap": {
     "NAME": "Leap",
-    "DESCRIPTION": "!D! damage to ALL enemies NL stanceA: !D! damage !B! block NL stanceB: switch stance.",
+    "DESCRIPTION": "!D! damage to ALL enemies NL stanceA: !D! damage !B! block NL stanceB: switch stance."
   },
   "WeaponMaster:DefenceIsOffence": {
     "NAME": "Defence is Offence",
-    "DESCRIPTION": "deal !D! damage. NL Switch Stance."
+    "DESCRIPTION": "Deal !D! damage. NL Switch Stance."
   },
   "WeaponMaster:OffenceIsDefence": {
     "NAME": "Offence is Defence",

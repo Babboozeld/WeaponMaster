@@ -60,14 +60,14 @@ public class Leap extends CustomCard {
         }
         if (p instanceof WeaponMasterPlayer){
             switch (((WeaponMasterPlayer)p).stance) {
-                case ATTACK: 
+                case OFFENCE: 
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage)));
-                    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
                     break;
-                case DEFEND:
-                    AbstractDungeon.actionManager.addToBottom(new SwitchStanceAction(p));
+                case DEFENCE:
+                    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));  
                     break;
             }
         }
+        AbstractDungeon.actionManager.addToBottom(new SwitchStanceAction(p));
     }
 }
