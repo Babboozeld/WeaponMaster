@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -28,8 +27,8 @@ public class PlayerEquipment extends CustomRelic {
 
     public PlayerEquipment() {
         super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), TIER, LandingSound.MAGICAL); // <<sound
-        tips.clear();
-        tips.add(new PowerTip(NAME, DESCRIPTION));
+        //tips.clear();
+        //tips.add(new PowerTip(NAME, DESCRIPTION));
     }
 
     public void upgrade(int amount) {
@@ -59,8 +58,11 @@ public class PlayerEquipment extends CustomRelic {
         this.counter = AMOUNT;
     }
 
-    // getUpdatedDescripion
-
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTION;
+    }
+    
     @Override
     public AbstractRelic makeCopy() {
         return new PlayerEquipment();
