@@ -17,13 +17,13 @@ public class Strike extends CustomCard {
     public static final String ID = WeaponMaster.makeID("Strike");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
-    public static final String IMG = WeaponMaster.makeResourcePath("cards/placeholder.png");
+    public static final String IMG = WeaponMaster.makeResourcePath("cards/placeholder_attack.png");
     private static final int COST = 1;
     public static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
-    private static final AbstractCard.CardType CARD_TYPE = AbstractCard.CardType.SKILL;
+    private static final AbstractCard.CardType CARD_TYPE = AbstractCard.CardType.ATTACK;
     public static final AbstractCard.CardColor CARD_COLOR = AbstractCardEnum.WEAPONMASTER_COLOR;
     private static final AbstractCard.CardRarity CARD_RARITY = AbstractCard.CardRarity.COMMON;
-    private static final AbstractCard.CardTarget CARD_TARGET = AbstractCard.CardTarget.SELF;
+    private static final AbstractCard.CardTarget CARD_TARGET = AbstractCard.CardTarget.ENEMY;
 
     private static final int AMOUNT = 6;
     private static final int UPGRADE_PLUS_AMOUNT = 3;

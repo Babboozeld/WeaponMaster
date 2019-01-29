@@ -1,5 +1,6 @@
 package weaponmaster.cards;
 
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,15 +10,18 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import weaponmaster.WeaponMaster;
+import weaponmaster.WeaponMaster.Stance;
+import weaponmaster.characters.WeaponMasterPlayer;
 import weaponmaster.patches.AbstractCardEnum;
 
 public class QuickReflexes extends CustomCard {
     public static final String ID = WeaponMaster.makeID("QuickReflexes");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
-    public static final String IMG = WeaponMaster.makeResourcePath("cards/placeholder.png");
+    public static final String IMG = WeaponMaster.makeResourcePath("cards/placeholder_skill.png");
     private static final int COST = 1;
     public static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = CARD_STRINGS.UPGRADE_DESCRIPTION;
     private static final AbstractCard.CardType CARD_TYPE = AbstractCard.CardType.SKILL;
     public static final AbstractCard.CardColor CARD_COLOR = AbstractCardEnum.WEAPONMASTER_COLOR;
     private static final AbstractCard.CardRarity CARD_RARITY = AbstractCard.CardRarity.COMMON;
@@ -41,6 +45,7 @@ public class QuickReflexes extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.rawDescription = UPGRADE_DESCRIPTION;
             this.upgradeBlock(UPGRADE_PLUS_AMOUNT);
             this.upgradeMagicNumber(1);
             this.initializeDescription();
@@ -49,6 +54,12 @@ public class QuickReflexes extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, new com.megacrit.cardcrawl.powers.CombustPower(p, 0, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+        if(p instanceof WeaponMasterPlayer){
+            if (((WeaponMasterPlayer)p).stance == Stance.DEFENCE) {
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, 0));
+                if (this.upgraded) AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, 0));
+            }
+        }
     }
 }

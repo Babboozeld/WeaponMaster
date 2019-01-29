@@ -23,7 +23,7 @@ public class Smack extends CustomCard {
     public static final String ID = WeaponMaster.makeID("Smack");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
-    public static final String IMG = WeaponMaster.makeResourcePath("cards/placeholder.png");
+    public static final String IMG = WeaponMaster.makeResourcePath("cards/placeholder_attack.png");
     private static final int COST = 1;
     public static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final AbstractCard.CardType CARD_TYPE = AbstractCard.CardType.ATTACK;

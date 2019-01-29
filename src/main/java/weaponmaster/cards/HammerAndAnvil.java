@@ -16,7 +16,7 @@ public class HammerAndAnvil extends CustomCard {
     public static final String ID = WeaponMaster.makeID("HammerAndAnvil");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
-    public static final String IMG = WeaponMaster.makeResourcePath("cards/placeholder.png");
+    public static final String IMG = WeaponMaster.makeResourcePath("cards/placeholder_power.png");
     private static final int COST = 3;
     public static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final AbstractCard.CardType CARD_TYPE = AbstractCard.CardType.POWER;

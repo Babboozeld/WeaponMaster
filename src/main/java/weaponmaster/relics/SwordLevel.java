@@ -1,5 +1,6 @@
 package weaponmaster.relics;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -18,14 +19,14 @@ public class SwordLevel extends CustomRelic {
     public static final RelicStrings RELIC_STRINGS = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = RELIC_STRINGS.NAME;
     public static final String DESCRIPTION = RELIC_STRINGS.DESCRIPTIONS[0];
-    public static final String IMG = WeaponMaster.makeResourcePath("relics/SwordLevel.png");
-    public static final String OUTLINE = WeaponMaster.makeResourcePath("relics/SwordLevelOutline.png");
+    public static final String IMG = WeaponMaster.makeResourcePath("relics/placeholder.png");//SwordLevel
+    public static final String OUTLINE = WeaponMaster.makeResourcePath("relics/placeholder_outline.png");//SwordLevelOutline
     public static final RelicTier TIER = RelicTier.STARTER;
 
     private static int AMOUNT = 1;
   
     public SwordLevel(){
-        super(ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(OUTLINE), TIER, LandingSound.MAGICAL);  //<<sound
+        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), TIER, LandingSound.MAGICAL);  //<<sound
         tips.clear();
         tips.add(new PowerTip(NAME, DESCRIPTION));
     }

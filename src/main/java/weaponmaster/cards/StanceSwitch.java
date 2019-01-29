@@ -10,12 +10,13 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import weaponmaster.WeaponMaster;
 import weaponmaster.actions.SwitchStanceAction;
+import weaponmaster.patches.WeaponMasterEnum;
 
 public class StanceSwitch extends CustomCard {
     public static final String ID = WeaponMaster.makeID("StanceSwitch");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
-    public static final String IMG = WeaponMaster.makeResourcePath("cards/placeholder.png");
+    public static final String IMG = WeaponMaster.makeResourcePath("cards/placeholder_skill.png");
     private static final int COST = 0;
     public static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = CARD_STRINGS.UPGRADE_DESCRIPTION;
@@ -26,6 +27,7 @@ public class StanceSwitch extends CustomCard {
 
     public StanceSwitch() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CARD_TYPE, CARD_COLOR, CARD_RARITY, CARD_TARGET);
+        this.tags.add(WeaponMasterEnum.WEAPONMASTER_SWITCHSTANCE);
     }
 
     @Override

@@ -13,12 +13,13 @@ import basemod.abstracts.CustomCard;
 import weaponmaster.WeaponMaster;
 import weaponmaster.actions.SwitchStanceAction;
 import weaponmaster.patches.AbstractCardEnum;
+import weaponmaster.patches.WeaponMasterEnum;
 
 public class DefenceIsOffence extends CustomCard {
     public static final String ID = WeaponMaster.makeID("DefenceIsOffence");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
-    public static final String IMG = WeaponMaster.makeResourcePath("cards/placeholder.png");
+    public static final String IMG = WeaponMaster.makeResourcePath("cards/placeholder_attack.png");
     private static final int COST = 1;
     public static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final AbstractCard.CardType CARD_TYPE = AbstractCard.CardType.ATTACK;
@@ -32,6 +33,7 @@ public class DefenceIsOffence extends CustomCard {
     public DefenceIsOffence() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CARD_TYPE, CARD_COLOR, CARD_RARITY, CARD_TARGET);
         this.baseDamage = this.damage = AMOUNT;
+        this.tags.add(WeaponMasterEnum.WEAPONMASTER_SWITCHSTANCE);
     }
 
     @Override

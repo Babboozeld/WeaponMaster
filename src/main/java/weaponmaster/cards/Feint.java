@@ -1,23 +1,20 @@
 package weaponmaster.cards;
 
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import weaponmaster.WeaponMaster;
-import weaponmaster.actions.SwitchStanceAction;
 import weaponmaster.patches.AbstractCardEnum;
 
 public class Feint extends CustomCard {
     public static final String ID = WeaponMaster.makeID("Feint");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = CARD_STRINGS.NAME;
-    public static final String IMG = WeaponMaster.makeResourcePath("cards/placeholder.png");
+    public static final String IMG = WeaponMaster.makeResourcePath("cards/placeholder_power.png");
     private static final int COST = 1;
     public static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = CARD_STRINGS.UPGRADE_DESCRIPTION;
@@ -53,7 +50,7 @@ public class Feint extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new SwitchStanceAction(p));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, drawAmount));
+        //AbstractDungeon.actionManager.addToBottom(new SwitchStanceAction(p));
+        //AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, drawAmount));
     }
 }
