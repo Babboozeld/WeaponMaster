@@ -46,7 +46,7 @@ public class SwitchStanceAction extends AbstractGameAction {
                     applyPower = new DefenceStancePower(p);
                     break;
             }
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.p, this.p, removePower));
+            if (p.hasPower(removePower)) AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.p, this.p, removePower));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.p, this.p, applyPower, 0));
             ((WeaponMasterPlayer)this.p).stance = switchTo;
         }

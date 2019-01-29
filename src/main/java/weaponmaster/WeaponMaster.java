@@ -1,17 +1,14 @@
 package weaponmaster;
 
-import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
-import java.util.Map;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.localization.Keyword;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -25,12 +22,26 @@ import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
+import weaponmaster.cards.ArtOfWar;
+import weaponmaster.cards.CrossingSwords;
+import weaponmaster.cards.DefenceIsOffence;
+import weaponmaster.cards.Defend;
+import weaponmaster.cards.HammerAndAnvil;
+import weaponmaster.cards.Leap;
+import weaponmaster.cards.LessonsOfWar;
+import weaponmaster.cards.OffenceIsDefence;
+import weaponmaster.cards.QuickReflexes;
+import weaponmaster.cards.Smack;
+import weaponmaster.cards.SpartanKick;
+import weaponmaster.cards.StanceSwitch;
+import weaponmaster.cards.Strike;
+import weaponmaster.cards.TheHighGround;
+import weaponmaster.cards.WarOfAttrition;
 import weaponmaster.characters.WeaponMasterPlayer;
 import weaponmaster.patches.AbstractCardEnum;
 import weaponmaster.patches.PlayerClassEnum;
 import weaponmaster.patches.WeaponMasterEnum;
 import weaponmaster.relics.PlayerEquipment;
-import weaponmaster.cards.*;
 
 @SpireInitializer
 public class WeaponMaster implements PostInitializeSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber, EditStringsSubscriber, EditKeywordsSubscriber { 
@@ -50,7 +61,8 @@ public class WeaponMaster implements PostInitializeSubscriber, EditCardsSubscrib
         BaseMod.addColor(AbstractCardEnum.WEAPONMASTER_COLOR, WeaponMasterEnum.CARD_BG_COLOR, WeaponMasterEnum.CARD_BACK_COLOR, WeaponMasterEnum.CARD_FRAME_COLOR,
             WeaponMasterEnum.CARD_FRAME_OUTLINE_COLOR, WeaponMasterEnum.CARD_DESC_BOX_COLOR, WeaponMasterEnum.CARD_TRAIL_VFX_COLOR, WeaponMasterEnum.CARD_GLOW_COLOR, 
             WeaponMasterEnum.CARD_ATTACK, WeaponMasterEnum.CARD_SKILL, WeaponMasterEnum.CARD_POWER, WeaponMasterEnum.CARD_ENERGY_ORB, 
-            WeaponMasterEnum.CARD_ATTACK_PORTRAIT, WeaponMasterEnum.CARD_SKILL_PORTRAIT, WeaponMasterEnum.CARD_POWER_PORTRAIT, WeaponMasterEnum.CARD_ENERGY_ORB_PORTRAIT);
+            WeaponMasterEnum.CARD_ATTACK_PORTRAIT, WeaponMasterEnum.CARD_SKILL_PORTRAIT, WeaponMasterEnum.CARD_POWER_PORTRAIT, 
+            WeaponMasterEnum.CARD_ENERGY_ORB_PORTRAIT, WeaponMasterEnum.CARD_SMALL_ENERGY_ORB);
     }
 
     public static final String makeResourcePath(String resource) {
@@ -134,17 +146,15 @@ public class WeaponMaster implements PostInitializeSubscriber, EditCardsSubscrib
 
     @Override
     public void receiveEditKeywords() {
-        Type typeToken = new TypeToken<Map<String, Keyword>>(){}.getType();
         Gson gson = new Gson();
-        String strings = loadJson("localization/eng/WeaponMaster-KeywordStrings.json");
-        @SuppressWarnings("unchecked")
-        Map<String,Keyword> keywords = (Map<String,Keyword>)gson.fromJson(strings, typeToken);
-        for (Keyword kw : keywords.values()) {
-            BaseMod.addKeyword(kw.NAMES, kw.DESCRIPTION);
+        String json = Gdx.files.internal("localization/eng/WeaponMaster-KeywordStrings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        Keyword[] keywords = gson.fromJson(json, Keyword[].class);
+
+        if (keywords != null) {
+            for (Keyword keyword : keywords) {
+                BaseMod.addKeyword(keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+            }
         }
-    }
-    private static String loadJson(String jsonPath) {
-        return Gdx.files.internal(jsonPath).readString(String.valueOf(StandardCharsets.UTF_8));
     }
     
 }

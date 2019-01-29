@@ -1,6 +1,6 @@
 {
   "WeaponMaster:Strike": {
-    "NAME": "Switch",
+    "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
   },
   "WeaponMaster:Defend": {
@@ -31,11 +31,11 @@
   },
   "WeaponMaster:WarOfAttrition": {
     "NAME": "War of Attrition",
-    "DESCRIPTION": "Deal !D! Damage to ALL enemies."
+    "DESCRIPTION": "Deal !M! Damage to ALL enemies at the end of your turn."
   },
   "WeaponMaster:CrossingSwords": {
     "NAME": "Crossing Swords",
-    "DESCRIPTION": "Gain !M! Dexterity."
+    "DESCRIPTION": "Gain !M! Thorns."
   },
   "WeaponMaster:TheHighGround": {
     "NAME": "The High Ground",

@@ -25,11 +25,11 @@ public class WeaponMasterEnum {
     public static final Color CARD_GLOW_COLOR = CardHelper.getColor(255.0f, 250.0f, 250.0f);
     
     //card color assets
-	
 	public static final String CARD_ATTACK = WeaponMaster.makeResourcePath("cards/512/bg_attack_weaponmaster.png");
 	public static final String CARD_SKILL = WeaponMaster.makeResourcePath("cards/512/bg_skill_weaponmaster.png");
 	public static final String CARD_POWER = WeaponMaster.makeResourcePath("cards/512/bg_power_weaponmaster.png");
-	public static final String CARD_ENERGY_ORB = WeaponMaster.makeResourcePath("cards/512/card_weaponmaster_orb.png");
+    public static final String CARD_ENERGY_ORB = WeaponMaster.makeResourcePath("cards/512/card_weaponmaster_orb.png");
+    public static final String CARD_SMALL_ENERGY_ORB = WeaponMaster.makeResourcePath("cards/512/card_small_weaponmaster_orb.png");
 	
 	public static final String CARD_ATTACK_PORTRAIT = WeaponMaster.makeResourcePath("cards/1024/bg_attack_weaponmaster.png");
 	public static final String CARD_SKILL_PORTRAIT = WeaponMaster.makeResourcePath("cards/1024/bg_skill_weaponmaster.png");

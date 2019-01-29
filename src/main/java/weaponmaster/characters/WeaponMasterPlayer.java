@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -15,19 +16,25 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpriterAnimation;
+import weaponmaster.WeaponMaster;
+import weaponmaster.WeaponMaster.Stance;
+import weaponmaster.cards.Defend;
+import weaponmaster.cards.Smack;
+import weaponmaster.cards.StanceSwitch;
+import weaponmaster.cards.Strike;
+import weaponmaster.patches.AbstractCardEnum;
 import weaponmaster.patches.PlayerClassEnum;
 import weaponmaster.patches.WeaponMasterEnum;
 import weaponmaster.powers.OffenceStancePower;
 import weaponmaster.relics.PlayerEquipment;
-import weaponmaster.WeaponMaster;
-import weaponmaster.WeaponMaster.Stance;
-import weaponmaster.cards.*;
-import weaponmaster.patches.AbstractCardEnum;
 
 public class WeaponMasterPlayer extends CustomPlayer {
 
@@ -74,7 +81,8 @@ public class WeaponMasterPlayer extends CustomPlayer {
     public Stance stance = Stance.OFFENCE;
 
     public WeaponMasterPlayer(String name, PlayerClass setClass) {
-        super(name, setClass, ORBTEXTURES, PLAYER_TEXTURES_LOCATION + ORBVFX_LOCATION, null);//PLAYER_TEXTURES_LOCATION + PLAYER_MODEL, PLAYER_ANIMATION);
+        super(name, setClass, ORBTEXTURES, PLAYER_TEXTURES_LOCATION + ORBVFX_LOCATION, null,  new SpriterAnimation( //));
+            PLAYER_TEXTURES_LOCATION + "spriter/theDefaultAnimation.scml"));//PLAYER_TEXTURES_LOCATION + PLAYER_MODEL, PLAYER_ANIMATION);
         
         this.dialogX = this.drawX + 0.0f * Settings.scale;              
         this.dialogY = this.drawY + 170.0f * Settings.scale; //220.0f?
@@ -83,16 +91,17 @@ public class WeaponMasterPlayer extends CustomPlayer {
             PLAYER_TEXTURES_LOCATION + PLAYER_CORPSE, getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN)); /*hb_x, hb_y, hb_w, hb_h < ?*/
     
         loadAnimation(
-            PLAYER_SKELETON_ATLAS,
-            PLAYER_SKELETON_JSON,
+            PLAYER_TEXTURES_LOCATION + PLAYER_SKELETON_ATLAS,
+            PLAYER_TEXTURES_LOCATION + PLAYER_SKELETON_JSON,
             1.0f);
             AnimationState.TrackEntry e = state.setAnimation(0, "animation", true);
             e.setTime(e.getEndTime() * MathUtils.random());
     }
 
     @Override
-    public void doCharSelectScreenSelectEffect() {
-        
+    public void doCharSelectScreenSelectEffect() {              // <<<
+        CardCrawlGame.sound.playA("ATTACK_DAGGER_1", 1.25f); // Sound Effect
+        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT, false);
     }
 
     @Override
@@ -117,12 +126,12 @@ public class WeaponMasterPlayer extends CustomPlayer {
 
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return null;
+        return "ATTACK_DAGGER_1";                               // <<<
     }
 
     @Override
     public BitmapFont getEnergyNumFont() {
-        return null;
+        return FontHelper.energyNumFontRed;                     // <<<
     }
 
     @Override
@@ -142,8 +151,13 @@ public class WeaponMasterPlayer extends CustomPlayer {
     }
 
     @Override
-    public AttackEffect[] getSpireHeartSlashEffect() {
-        return null;
+    public AttackEffect[] getSpireHeartSlashEffect() {             // <<<
+        return new AbstractGameAction.AttackEffect[]{
+            AbstractGameAction.AttackEffect.SLASH_DIAGONAL, 
+            AbstractGameAction.AttackEffect.SLASH_HORIZONTAL,
+			AbstractGameAction.AttackEffect.SLASH_VERTICAL,
+			AbstractGameAction.AttackEffect.SLASH_HEAVY
+        };
     }
 
     @Override
@@ -153,7 +167,7 @@ public class WeaponMasterPlayer extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return null;
+        return new Strike();                                // <<<
     }
 
     @Override

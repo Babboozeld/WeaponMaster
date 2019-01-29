@@ -1,12 +1,12 @@
-{
-    "ChanceStance": {
+[
+    {
+      "PROPER_NAME": "Switch Stance",
       "NAMES":[
-        "chance_stance",
-        "UNUSED_RESERVE",
-        "UNUSED_RESERVE",
-        "UNUSED_RESERVE",
-        "UNUSED_RESERVE"
+        "Switch Stance",
+        "Switch_Stance",
+        "switch stance",
+        "switch_stance"
       ],
       "DESCRIPTION": "Chances your stance."
     }
-  }
+]

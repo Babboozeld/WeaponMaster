@@ -1,13 +1,13 @@
 {
-    "theDefault:OffenceStancePower": {
+    "WeaponMaster:OffenceStancePower": {
         "NAME": "Offence Stance",
         "DESCRIPTIONS": ["You applied ", " keyword.", " keywords."]
     },
-    "theDefault:GainBlockByOffenceAttackPower": {
+    "WeaponMaster:GainBlockByOffenceAttackPower": {
         "NAME": "GainBlockByOffenceAttackPower",
         "DESCRIPTIONS": ["You applied ", " keyword.", " keywords."]
     },
-    "theDefault:DefenceStancePower": {
+    "WeaponMaster:DefenceStancePower": {
         "NAME": "Defence Stance",
         "DESCRIPTIONS": ["At the start of your turn, TOUCH ", " enemy." , " enemies."]
     }
