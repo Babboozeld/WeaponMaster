@@ -5,7 +5,7 @@
   },
   "WeaponMaster:Defend": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! block."
+    "DESCRIPTION": "Gain !B! Block."
   },
   "WeaponMaster:StanceSwitch": {
     "NAME": "Stance Switch",
@@ -18,7 +18,7 @@
   },
   "WeaponMaster:Feint": {
     "NAME": "Feint",
-    "DESCRIPTION": "Gain !M! strength."
+    "DESCRIPTION": "Gain !M! Strength."
   },
   "WeaponMaster:ArtOfWar": {
     "NAME": "Art of War",
@@ -27,19 +27,19 @@
   },
   "WeaponMaster:LessonsOfWar": {
     "NAME": "Lessons of War",
-    "DESCRIPTION": "Gain !M! dexterity."
+    "DESCRIPTION": "Gain !M! Dexterity."
   },
   "WeaponMaster:WarOfAttrition": {
     "NAME": "War of Attrition",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Deal !D! Damage to ALL enemies."
   },
   "WeaponMaster:CrossingSwords": {
     "NAME": "Crossing Swords",
-    "DESCRIPTION": "Gain !M! dexterity."
+    "DESCRIPTION": "Gain !M! Dexterity."
   },
   "WeaponMaster:TheHighGround": {
     "NAME": "The High Ground",
-    "DESCRIPTION": "when in offencive stance gain !M! block for every attack played in a round."
+    "DESCRIPTION": "when in offencive stance gain !M! Block for every Attack played in a round."
   },
   "WeaponMaster:HammerAndAnvil": {
     "NAME": "Hammer and Anvil",
@@ -47,7 +47,7 @@
   },
   "WeaponMaster:Leap": {
     "NAME": "Leap",
-    "DESCRIPTION": "!D! damage to ALL enemies NL stanceA: !D! damage !B! block NL stanceB: switch stance."
+    "DESCRIPTION": "stanceA: Deal !D! damage to ALL enemies. NL stanceB: Deal !D! damage and gain !B! Block. NL Switch Stance."
   },
   "WeaponMaster:DefenceIsOffence": {
     "NAME": "Defence is Offence",
@@ -59,11 +59,11 @@
   },
   "WeaponMaster:OffenceIsDefence": {
     "NAME": "Offence is Defence",
-    "DESCRIPTION": "Gain !B! block. NL Switch Stance."
+    "DESCRIPTION": "Gain !B! Block. NL Switch Stance."
   },
   "WeaponMaster:QuickReflexes": {
     "NAME": "Quick Reflexes",
-    "DESCRIPTION": "Gain !B! block. NL #yStanceB: dexterity counts double.",
-    "UPGRADE_DESCRIPTION": "Gain !B! block. NL #yStanceB: dexterity counts triple."
+    "DESCRIPTION": "Gain !B! Block. NL #yStanceB: Dexterity counts double.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL #yStanceB: Dexterity counts triple."
   }
 }
