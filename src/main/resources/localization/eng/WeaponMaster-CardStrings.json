@@ -9,8 +9,8 @@
   },
   "WeaponMaster:StanceSwitch": {
     "NAME": "Stance Switch",
-    "DESCRIPTION": "Switch Stance.",
-    "UPGRADE_DESCRIPTION": "Switch Stance. NL Retain."
+    "DESCRIPTION": "Switch_Stance.",
+    "UPGRADE_DESCRIPTION": "Switch_Stance. NL Retain."
   },
   "WeaponMaster:Smack": {
     "NAME": "Smack",
@@ -18,12 +18,12 @@
   },
   "WeaponMaster:Feint": {
     "NAME": "Feint",
-    "DESCRIPTION": "Gain !M! Strength."
+    "DESCRIPTION": "When Switching Stance Draw 1 card.",
+    "UPGRADE_DESCRIPTION": "When Switching Stance Draw 2 cards."
   },
   "WeaponMaster:ArtOfWar": {
     "NAME": "Art of War",
-    "DESCRIPTION": "Switch Stance. NL Draw 1 card.",
-    "UPGRADE_DESCRIPTION": "Switch Stance. NL Draw 2 cards."
+    "DESCRIPTION": "Gain !M! Strength."
   },
   "WeaponMaster:LessonsOfWar": {
     "NAME": "Lessons of War",
@@ -47,11 +47,20 @@
   },
   "WeaponMaster:Leap": {
     "NAME": "Leap",
-    "DESCRIPTION": "stanceA: Deal !D! damage to ALL enemies. NL stanceB: Deal !D! damage and gain !B! Block. NL Switch Stance."
+    "DESCRIPTION": "stanceA: Deal !D! damage to ALL enemies. NL stanceB: Deal !D! damage and gain !B! Block. NL Switch_Stance."
   },
   "WeaponMaster:DefenceIsOffence": {
     "NAME": "Defence is Offence",
-    "DESCRIPTION": "Deal !D! damage. NL Switch Stance."
+    "DESCRIPTION": "Deal !D! damage. NL Switch_Stance."
+  },
+  "WeaponMaster:HeavenAndEarth": {
+    "NAME": "Heaven and Earth",
+    "DESCRIPTION": "Deal !D! damage twice."
+  },
+  "WeaponMaster:Pushover": {
+    "NAME": "Pushover",
+    "DESCRIPTION": "Deal !D! Damage. NL StanceA: Strength counts double.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL StanceA: Strength counts triple."
   },
   "WeaponMaster:SpartanKick": {
     "NAME": "Spartan Kick",
@@ -59,11 +68,16 @@
   },
   "WeaponMaster:OffenceIsDefence": {
     "NAME": "Offence is Defence",
-    "DESCRIPTION": "Gain !B! Block. NL Switch Stance."
+    "DESCRIPTION": "Gain !B! Block. NL Switch_Stance."
   },
   "WeaponMaster:QuickReflexes": {
     "NAME": "Quick Reflexes",
-    "DESCRIPTION": "Gain !B! Block. NL #yStanceB: Dexterity counts double.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL #yStanceB: Dexterity counts triple."
+    "DESCRIPTION": "Gain !B! Block. NL StanceB: Dexterity counts double.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL StanceB: Dexterity counts triple."
+  },
+  "WeaponMaster:WarRations": {
+    "NAME": "War Rations",
+    "DESCRIPTION": "Draw 2 cards. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw 2 cards."
   }
 }

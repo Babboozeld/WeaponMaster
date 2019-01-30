@@ -13,7 +13,7 @@ public class DefenceStancePower extends AbstractPower {
     public static final String ID_NAME = WeaponMaster.makeID("DefenceStancePower");
     public static final PowerStrings POWER_STRINGS = CardCrawlGame.languagePack.getPowerStrings(ID_NAME);
     public static final String NAME = POWER_STRINGS.NAME;
-    public static final String IMG = WeaponMaster.makeResourcePath("powers/placeholder.png");
+    public static final String IMG = WeaponMaster.makeResourcePath("powers/placeholder_r_b.png");
     public static final String[] DESCRIPTION = POWER_STRINGS.DESCRIPTIONS;
 
     public DefenceStancePower(AbstractCreature owner) {

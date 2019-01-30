@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;
@@ -22,21 +23,7 @@ import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
-import weaponmaster.cards.ArtOfWar;
-import weaponmaster.cards.CrossingSwords;
-import weaponmaster.cards.DefenceIsOffence;
-import weaponmaster.cards.Defend;
-import weaponmaster.cards.HammerAndAnvil;
-import weaponmaster.cards.Leap;
-import weaponmaster.cards.LessonsOfWar;
-import weaponmaster.cards.OffenceIsDefence;
-import weaponmaster.cards.QuickReflexes;
-import weaponmaster.cards.Smack;
-import weaponmaster.cards.SpartanKick;
-import weaponmaster.cards.StanceSwitch;
-import weaponmaster.cards.Strike;
-import weaponmaster.cards.TheHighGround;
-import weaponmaster.cards.WarOfAttrition;
+import weaponmaster.cards.*;
 import weaponmaster.characters.WeaponMasterPlayer;
 import weaponmaster.patches.AbstractCardEnum;
 import weaponmaster.patches.PlayerClassEnum;
@@ -95,6 +82,7 @@ public class WeaponMaster implements PostInitializeSubscriber, EditCardsSubscrib
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new Smack());
         BaseMod.addCard(new StanceSwitch());
+        BaseMod.addCard(new Feint());
         BaseMod.addCard(new ArtOfWar());
         BaseMod.addCard(new LessonsOfWar());
         BaseMod.addCard(new WarOfAttrition());
@@ -103,15 +91,19 @@ public class WeaponMaster implements PostInitializeSubscriber, EditCardsSubscrib
         BaseMod.addCard(new HammerAndAnvil());
         BaseMod.addCard(new Leap());
         BaseMod.addCard(new DefenceIsOffence());
+        BaseMod.addCard(new HeavenAndEarth());
+        BaseMod.addCard(new Pushover());
         BaseMod.addCard(new SpartanKick());
         BaseMod.addCard(new OffenceIsDefence());
         BaseMod.addCard(new QuickReflexes());
+        BaseMod.addCard(new WarRations());
 
         // Unlock cards:
         UnlockTracker.unlockCard(Strike.ID);
         UnlockTracker.unlockCard(Defend.ID);
         UnlockTracker.unlockCard(Smack.ID);
         UnlockTracker.unlockCard(StanceSwitch.ID);
+        UnlockTracker.unlockCard(Feint.ID);
         UnlockTracker.unlockCard(ArtOfWar.ID);
         UnlockTracker.unlockCard(LessonsOfWar.ID);
         UnlockTracker.unlockCard(WarOfAttrition.ID);
@@ -120,9 +112,12 @@ public class WeaponMaster implements PostInitializeSubscriber, EditCardsSubscrib
         UnlockTracker.unlockCard(HammerAndAnvil.ID);
         UnlockTracker.unlockCard(Leap.ID);
         UnlockTracker.unlockCard(DefenceIsOffence.ID);
+        UnlockTracker.unlockCard(HeavenAndEarth.ID);
+        UnlockTracker.unlockCard(Pushover.ID);
         UnlockTracker.unlockCard(SpartanKick.ID);
         UnlockTracker.unlockCard(OffenceIsDefence.ID);
         UnlockTracker.unlockCard(QuickReflexes.ID);
+        UnlockTracker.unlockCard(WarRations.ID);
     }
 
     @Override
@@ -142,6 +137,7 @@ public class WeaponMaster implements PostInitializeSubscriber, EditCardsSubscrib
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "localization/eng/WeaponMaster-CharacterStrings.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, "localization/eng/WeaponMaster-PowerStrings.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, "localization/eng/WeaponMaster-RelicStrings.json");
+        BaseMod.loadCustomStringsFile(UIStrings.class, "localization/eng/WeaponMaster-UIStrings.json");
     }
 
     @Override

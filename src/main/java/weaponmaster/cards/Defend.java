@@ -24,7 +24,7 @@ public class Defend extends CustomCard {
     private static final AbstractCard.CardRarity CARD_RARITY = AbstractCard.CardRarity.COMMON;
     private static final AbstractCard.CardTarget CARD_TARGET = AbstractCard.CardTarget.SELF;
 
-    private static final int AMOUNT = 7;
+    private static final int AMOUNT = 5;
     private static final int UPGRADE_PLUS_AMOUNT = 3;
 
     public Defend() {

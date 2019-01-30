@@ -21,7 +21,7 @@ public class HammerAndAnvil extends CustomCard {
     public static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final AbstractCard.CardType CARD_TYPE = AbstractCard.CardType.POWER;
     public static final AbstractCard.CardColor CARD_COLOR = AbstractCardEnum.WEAPONMASTER_COLOR;
-    private static final AbstractCard.CardRarity CARD_RARITY = AbstractCard.CardRarity.UNCOMMON;
+    private static final AbstractCard.CardRarity CARD_RARITY = AbstractCard.CardRarity.RARE;
     private static final AbstractCard.CardTarget CARD_TARGET = AbstractCard.CardTarget.SELF;
 
     private static final int AMOUNT = 2;

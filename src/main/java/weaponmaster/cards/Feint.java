@@ -1,14 +1,17 @@
 package weaponmaster.cards;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import weaponmaster.WeaponMaster;
 import weaponmaster.patches.AbstractCardEnum;
+import weaponmaster.powers.FeintPower;
 
 public class Feint extends CustomCard {
     public static final String ID = WeaponMaster.makeID("Feint");
@@ -30,7 +33,7 @@ public class Feint extends CustomCard {
 
     public Feint() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CARD_TYPE, CARD_COLOR, CARD_RARITY, CARD_TARGET);
-        this.drawAmount = AMOUNT;
+        this.drawAmount = this.draw = AMOUNT;
     }
 
     @Override
@@ -50,7 +53,6 @@ public class Feint extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //AbstractDungeon.actionManager.addToBottom(new SwitchStanceAction(p));
-        //AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, drawAmount));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FeintPower(p, this.drawAmount), this.drawAmount));
     }
 }

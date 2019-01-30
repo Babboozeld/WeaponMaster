@@ -1,14 +1,18 @@
 {
     "WeaponMaster:OffenceStancePower": {
         "NAME": "Offence Stance",
-        "DESCRIPTIONS": ["You applied ", " keyword.", " keywords."]
+        "DESCRIPTIONS": ["Allows you to use the offence action on cards."]
     },
-    "WeaponMaster:GainBlockByOffenceAttackPower": {
-        "NAME": "GainBlockByOffenceAttackPower",
-        "DESCRIPTIONS": ["You applied ", " keyword.", " keywords."]
+    "WeaponMaster:FeintPower": {
+        "NAME": "Feint",
+        "DESCRIPTIONS": ["When switching stance, draw X cards."]
+    },
+    "WeaponMaster:TheHighGroundPower": {
+        "NAME": "The High Ground ",
+        "DESCRIPTIONS": ["When in offence gain 3 block for every attack."]
     },
     "WeaponMaster:DefenceStancePower": {
         "NAME": "Defence Stance",
-        "DESCRIPTIONS": ["At the start of your turn, TOUCH ", " enemy." , " enemies."]
+        "DESCRIPTIONS": ["Allows you to use the defence action on cards."]
     }
 }
