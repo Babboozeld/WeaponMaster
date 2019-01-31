@@ -15,6 +15,8 @@ public class UpgradePlayerEquipmentOption extends AbstractCampfireOption {
     public static final String DESCRIPTION = UI_STRINGS.TEXT[1];
     public boolean isFree = true;
 
+    public static final int AMOUNT = 1;
+
     public UpgradePlayerEquipmentOption() {
         this.label = LABEL;
         this.usable = true;
@@ -31,7 +33,7 @@ public class UpgradePlayerEquipmentOption extends AbstractCampfireOption {
         if(this.usable) {
             CardCrawlGame.sound.play("SLEEP_BLANKET");
             if (AbstractDungeon.player.hasRelic(PlayerEquipment.ID)){
-                ((PlayerEquipment)AbstractDungeon.player.getRelic(PlayerEquipment.ID)).upgrade(2);
+                ((PlayerEquipment)AbstractDungeon.player.getRelic(PlayerEquipment.ID)).upgrade(AMOUNT);
             }
             AbstractDungeon.effectList.add(new UpgradePlayerEquipmentEffect());
             for (int i = 0; i < 30; i++) {

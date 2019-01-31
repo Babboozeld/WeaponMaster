@@ -97,6 +97,7 @@ public class WeaponMaster implements PostInitializeSubscriber, EditCardsSubscrib
         BaseMod.addCard(new OffenceIsDefence());
         BaseMod.addCard(new QuickReflexes());
         BaseMod.addCard(new WarRations());
+        BaseMod.addCard(new ShieldOfStJohn());
 
         // Unlock cards:
         UnlockTracker.unlockCard(Strike.ID);
@@ -118,6 +119,7 @@ public class WeaponMaster implements PostInitializeSubscriber, EditCardsSubscrib
         UnlockTracker.unlockCard(OffenceIsDefence.ID);
         UnlockTracker.unlockCard(QuickReflexes.ID);
         UnlockTracker.unlockCard(WarRations.ID);
+        UnlockTracker.unlockCard(ShieldOfStJohn.ID);
     }
 
     @Override

@@ -14,7 +14,7 @@
   },
   "WeaponMaster:Smack": {
     "NAME": "Smack",
-    "DESCRIPTION": "Deal !D! damage. NL #yStanceA: Apply !M! Vulnerable. NL #yStanceD Apply !M! Weak."
+    "DESCRIPTION": "Deal !D! damage. NL Offencive stance: Apply !M! Vulnerable. NL Defence stance: Apply !M! Weak."
   },
   "WeaponMaster:Feint": {
     "NAME": "Feint",
@@ -39,7 +39,7 @@
   },
   "WeaponMaster:TheHighGround": {
     "NAME": "The High Ground",
-    "DESCRIPTION": "when in offencive stance gain !M! Block for every Attack played in a round."
+    "DESCRIPTION": "When in offencive stance gain !M! Block for every Attack played in a round."
   },
   "WeaponMaster:HammerAndAnvil": {
     "NAME": "Hammer and Anvil",
@@ -47,11 +47,11 @@
   },
   "WeaponMaster:Leap": {
     "NAME": "Leap",
-    "DESCRIPTION": "stanceA: Deal !D! damage to ALL enemies. NL stanceB: Deal !D! damage and gain !B! Block. NL Switch_Stance."
+    "DESCRIPTION": "Offencive stance: Deal !D! damage to ALL enemies. NL Defence stance: Deal !D! damage and gain !B! Block. NL Switch_Stance."
   },
   "WeaponMaster:DefenceIsOffence": {
     "NAME": "Defence is Offence",
-    "DESCRIPTION": "Deal !D! damage. NL Switch_Stance."
+    "DESCRIPTION": "Deal !D! damage. NL  Switch_Stance."
   },
   "WeaponMaster:HeavenAndEarth": {
     "NAME": "Heaven and Earth",
@@ -59,8 +59,8 @@
   },
   "WeaponMaster:Pushover": {
     "NAME": "Pushover",
-    "DESCRIPTION": "Deal !D! Damage. NL StanceA: Strength counts double.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL StanceA: Strength counts triple."
+    "DESCRIPTION": "Deal !D! Damage. NL Offencive stance: Strength counts double.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL Offencive stance: Strength counts triple."
   },
   "WeaponMaster:SpartanKick": {
     "NAME": "Spartan Kick",
@@ -68,16 +68,20 @@
   },
   "WeaponMaster:OffenceIsDefence": {
     "NAME": "Offence is Defence",
-    "DESCRIPTION": "Gain !B! Block. NL Switch_Stance."
+    "DESCRIPTION": "Gain !B! Block. NL  Switch_Stance."
   },
   "WeaponMaster:QuickReflexes": {
     "NAME": "Quick Reflexes",
-    "DESCRIPTION": "Gain !B! Block. NL StanceB: Dexterity counts double.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL StanceB: Dexterity counts triple."
+    "DESCRIPTION": "Gain !B! Block. NL Defence stance: Dexterity counts double.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Defence stance: Dexterity counts triple."
   },
   "WeaponMaster:WarRations": {
     "NAME": "War Rations",
     "DESCRIPTION": "Draw 2 cards. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Draw 2 cards."
+  },
+  "WeaponMaster:ShieldOfStJohn": {
+    "NAME": "Shield of St.John",
+    "DESCRIPTION": "Heal !M! HP. NL Exhaust."
   }
 }
