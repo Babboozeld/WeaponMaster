@@ -5,18 +5,15 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
-import weaponmaster.ui.UpgradePlayerEquipmentEffect;
 
 import weaponmaster.WeaponMaster;
-import weaponmaster.actions.PlayerEquipmentUpgradeAction;
+import weaponmaster.relics.PlayerEquipment;
 
 public class UpgradePlayerEquipmentOption extends AbstractCampfireOption {
     private static final UIStrings UI_STRINGS = CardCrawlGame.languagePack.getUIString(WeaponMaster.makeID("UpgradePlayerEquipmentOption"));
     public static final String LABEL = UI_STRINGS.TEXT[0];
     public static final String DESCRIPTION = UI_STRINGS.TEXT[1];
     public boolean isFree = true;
-
-    private static int AMOUNT = 3;
 
     public UpgradePlayerEquipmentOption() {
         this.label = LABEL;
@@ -33,7 +30,9 @@ public class UpgradePlayerEquipmentOption extends AbstractCampfireOption {
     public void useOption() {
         if(this.usable) {
             CardCrawlGame.sound.play("SLEEP_BLANKET");
-            AbstractDungeon.actionManager.addToBottom(new PlayerEquipmentUpgradeAction(AMOUNT));
+            if (AbstractDungeon.player.hasRelic(PlayerEquipment.ID)){
+                ((PlayerEquipment)AbstractDungeon.player.getRelic(PlayerEquipment.ID)).upgrade(2);
+            }
             AbstractDungeon.effectList.add(new UpgradePlayerEquipmentEffect());
             for (int i = 0; i < 30; i++) {
                 AbstractDungeon.topLevelEffects.add(new com.megacrit.cardcrawl.vfx.campfire.CampfireSleepScreenCoverEffect());

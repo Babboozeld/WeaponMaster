@@ -23,30 +23,20 @@ public class PlayerEquipment extends CustomRelic {
     public static final String OUTLINE = WeaponMaster.makeResourcePath("relics/placeholder_outline.png");//PlayerEquipmentOutline
     public static final RelicTier TIER = RelicTier.STARTER;
 
-    private static int AMOUNT = 1;
+    public int AMOUNT = 0;
 
     public PlayerEquipment() {
         super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), TIER, LandingSound.MAGICAL); // <<sound
-        //tips.clear();
-        //tips.add(new PowerTip(NAME, DESCRIPTION));
+        this.counter = 1;
     }
 
     public void upgrade(int amount) {
-        AMOUNT += amount;
-        this.counter += AMOUNT;
+        this.counter += amount;
     }
 
     public void boost(int amount) {
-        this.counter += amount;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new DexterityPower(AbstractDungeon.player, amount), amount));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new StrengthPower(AbstractDungeon.player, amount), amount));
-    }
-
-    @Override
-    public void atBattleStart() {
-        this.counter = AMOUNT;
+        AMOUNT = amount;
+        this.counter += AMOUNT;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
                 new DexterityPower(AbstractDungeon.player, AMOUNT), AMOUNT));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
@@ -54,8 +44,17 @@ public class PlayerEquipment extends CustomRelic {
     }
 
     @Override
+    public void atBattleStart() {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
+                new DexterityPower(AbstractDungeon.player, this.counter), this.counter));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
+                new StrengthPower(AbstractDungeon.player, this.counter), this.counter));
+    }
+
+    @Override
     public void onVictory() {   
-        this.counter = AMOUNT;
+        this.counter -= AMOUNT;
+        AMOUNT = 0;
     }
 
     @Override

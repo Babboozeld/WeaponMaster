@@ -43,7 +43,6 @@ public class UpgradePlayerEquipmentEffect extends AbstractGameEffect {
         if ((this.duration < this.startingDuration - 0.5F && !this.hasUpgraded)) {
             playSleepJingle();
             this.hasUpgraded = true;
-            //
         }
 
         if (this.duration < this.startingDuration / 2.0F)
