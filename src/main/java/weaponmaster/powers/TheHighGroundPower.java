@@ -38,7 +38,7 @@ public class TheHighGroundPower extends AbstractPower {
     public void onUseCard(AbstractCard card, UseCardAction action) {
         super.onUseCard(card, action);
         if (this.owner instanceof WeaponMasterPlayer){
-            if (((WeaponMasterPlayer)this.owner).stance == Stance.OFFENCE && card.type == CardType.ATTACK) {
+            if (((WeaponMasterPlayer)this.owner).stance == Stance.OFFENSE && card.type == CardType.ATTACK) {
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, this.amount));
             }
         }

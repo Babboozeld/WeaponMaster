@@ -22,7 +22,7 @@ public class Strike extends CustomCard {
     public static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final AbstractCard.CardType CARD_TYPE = AbstractCard.CardType.ATTACK;
     public static final AbstractCard.CardColor CARD_COLOR = AbstractCardEnum.WEAPONMASTER_COLOR;
-    private static final AbstractCard.CardRarity CARD_RARITY = AbstractCard.CardRarity.COMMON;
+    private static final AbstractCard.CardRarity CARD_RARITY = AbstractCard.CardRarity.BASIC;
     private static final AbstractCard.CardTarget CARD_TARGET = AbstractCard.CardTarget.ENEMY;
 
     private static final int AMOUNT = 6;

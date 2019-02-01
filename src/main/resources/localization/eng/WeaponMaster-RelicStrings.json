@@ -3,21 +3,21 @@
 		"NAME": "Sword Lvl",
 		"FLAVOR": "The snake is a friend.",
 		"DESCRIPTIONS": [
-			"Gain Strength equal to its level."
+			"Start each combat with Strength equal to Sword level."
 		]
 	},
 	"WeaponMaster:ShieldLevel": {
 		"NAME": "Shield Lvl",
 		"FLAVOR": "The snake is a friend.",
 		"DESCRIPTIONS": [
-			"Gain Dexterity equal to its level."
+			"Start each combat with Dexterity equal to Shield level."
 		]
 	},
 	"WeaponMaster:PlayerEquipment": {
 		"NAME": "Equipment Lvl",
 		"FLAVOR": "The snake is a friend.",
 		"DESCRIPTIONS": [
-			"Gain Strength and Dexterity equal to equipment level."
+			"Start each combat with Strength and Dexterity equal to Equipment level."
 		]
 	}
 }

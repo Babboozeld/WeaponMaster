@@ -28,7 +28,7 @@ public class Smack extends CustomCard {
     public static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final AbstractCard.CardType CARD_TYPE = AbstractCard.CardType.ATTACK;
     public static final AbstractCard.CardColor CARD_COLOR = AbstractCardEnum.WEAPONMASTER_COLOR;
-    private static final AbstractCard.CardRarity CARD_RARITY = AbstractCard.CardRarity.COMMON;
+    private static final AbstractCard.CardRarity CARD_RARITY = AbstractCard.CardRarity.BASIC;
     private static final AbstractCard.CardTarget CARD_TARGET = AbstractCard.CardTarget.ENEMY;
     private static final int AMOUNT_A = 11;
     private static final int AMOUNT_M = 1;
@@ -59,10 +59,10 @@ public class Smack extends CustomCard {
         if (p instanceof WeaponMasterPlayer){
             AbstractPower effect = null;
             switch (((WeaponMasterPlayer)p).stance) {
-                    case OFFENCE: 
+                    case OFFENSE:
                     effect = new VulnerablePower(m, this.magicNumber, false);
                     break;
-                case DEFENCE:
+                case DEFENSE:
                     effect = new WeakPower(m, this.magicNumber, false);
                     break;
             }

@@ -40,7 +40,7 @@ public class WeaponMaster implements PostInitializeSubscriber, EditCardsSubscrib
     private static final String DESCRIPTION = "A mod that adds the Weapon Master character to the game Slay the Spire.";
     
     public enum Stance {
-        OFFENCE, DEFENCE
+        OFFENSE, DEFENSE
     }
 
     public WeaponMaster() {
@@ -90,11 +90,11 @@ public class WeaponMaster implements PostInitializeSubscriber, EditCardsSubscrib
         BaseMod.addCard(new TheHighGround());
         BaseMod.addCard(new HammerAndAnvil());
         BaseMod.addCard(new Leap());
-        BaseMod.addCard(new DefenceIsOffence());
+        BaseMod.addCard(new DefenseIsOffense());
         BaseMod.addCard(new HeavenAndEarth());
         BaseMod.addCard(new Pushover());
         BaseMod.addCard(new SpartanKick());
-        BaseMod.addCard(new OffenceIsDefence());
+        BaseMod.addCard(new OffenseIsDefense());
         BaseMod.addCard(new QuickReflexes());
         BaseMod.addCard(new WarRations());
         BaseMod.addCard(new ShieldOfStJohn());
@@ -112,11 +112,11 @@ public class WeaponMaster implements PostInitializeSubscriber, EditCardsSubscrib
         UnlockTracker.unlockCard(TheHighGround.ID);
         UnlockTracker.unlockCard(HammerAndAnvil.ID);
         UnlockTracker.unlockCard(Leap.ID);
-        UnlockTracker.unlockCard(DefenceIsOffence.ID);
+        UnlockTracker.unlockCard(DefenseIsOffense.ID);
         UnlockTracker.unlockCard(HeavenAndEarth.ID);
         UnlockTracker.unlockCard(Pushover.ID);
         UnlockTracker.unlockCard(SpartanKick.ID);
-        UnlockTracker.unlockCard(OffenceIsDefence.ID);
+        UnlockTracker.unlockCard(OffenseIsDefense.ID);
         UnlockTracker.unlockCard(QuickReflexes.ID);
         UnlockTracker.unlockCard(WarRations.ID);
         UnlockTracker.unlockCard(ShieldOfStJohn.ID);

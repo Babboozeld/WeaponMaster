@@ -57,7 +57,7 @@ public class QuickReflexes extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int plusAmount = 0;
         if(p instanceof WeaponMasterPlayer && p.hasPower(DexterityPower.POWER_ID)){
-            if (((WeaponMasterPlayer)p).stance == Stance.DEFENCE) {
+            if (((WeaponMasterPlayer)p).stance == Stance.DEFENSE) {
                 plusAmount = p.getPower(DexterityPower.POWER_ID).amount;
                 if (this.upgraded) plusAmount += plusAmount; 
             }

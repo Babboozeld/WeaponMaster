@@ -58,7 +58,7 @@ public class Pushover extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int plusAmount = 0;
         if(p instanceof WeaponMasterPlayer && p.hasPower(StrengthPower.POWER_ID)){
-            if (((WeaponMasterPlayer)p).stance == Stance.OFFENCE) {
+            if (((WeaponMasterPlayer)p).stance == Stance.OFFENSE) {
                 plusAmount = p.getPower(StrengthPower.POWER_ID).amount;
                 if (this.upgraded) plusAmount += plusAmount; 
             }

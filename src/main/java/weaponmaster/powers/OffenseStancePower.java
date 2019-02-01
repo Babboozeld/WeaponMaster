@@ -8,15 +8,15 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import weaponmaster.WeaponMaster;
 
-public class DefenceStancePower extends AbstractPower {
-
-    public static final String ID_NAME = WeaponMaster.makeID("DefenceStancePower");
+public class OffenseStancePower extends AbstractPower {
+    
+    public static final String ID_NAME = WeaponMaster.makeID("OffenseStancePower");
     public static final PowerStrings POWER_STRINGS = CardCrawlGame.languagePack.getPowerStrings(ID_NAME);
     public static final String NAME = POWER_STRINGS.NAME;
-    public static final String IMG = WeaponMaster.makeResourcePath("powers/placeholder_r_b.png");
+    public static final String IMG = WeaponMaster.makeResourcePath("powers/placeholder_r.png");
     public static final String[] DESCRIPTION = POWER_STRINGS.DESCRIPTIONS;
 
-    public DefenceStancePower(AbstractCreature owner) {
+    public OffenseStancePower(AbstractCreature owner){
         this.name = NAME;
         this.ID = ID_NAME;
         this.owner = owner;
