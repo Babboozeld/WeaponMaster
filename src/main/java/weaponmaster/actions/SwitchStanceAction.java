@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import weaponmaster.WeaponMaster.Stance;
 import weaponmaster.characters.WeaponMasterPlayer;
-import weaponmaster.powers.OffenceStancePower;
-import weaponmaster.powers.DefenceStancePower;
+import weaponmaster.powers.DefenseStancePower;
+import weaponmaster.powers.OffenseStancePower;
 
 public class SwitchStanceAction extends AbstractGameAction {
 
@@ -20,7 +20,7 @@ public class SwitchStanceAction extends AbstractGameAction {
     public SwitchStanceAction(AbstractPlayer p) {
         if (p instanceof WeaponMasterPlayer) {
             this.p = p;
-            this.switchTo = ((WeaponMasterPlayer)this.p).stance == Stance.OFFENCE ? Stance.DEFENCE : Stance.OFFENCE;
+            this.switchTo = ((WeaponMasterPlayer)this.p).stance == Stance.OFFENSE ? Stance.DEFENSE : Stance.OFFENSE;
         }
     }
 
@@ -37,13 +37,13 @@ public class SwitchStanceAction extends AbstractGameAction {
             String removePower = "";
             AbstractPower applyPower = null;
             switch (this.switchTo) {
-                case OFFENCE:
-                    removePower = DefenceStancePower.ID_NAME;
-                    applyPower = new OffenceStancePower(p);
+                case OFFENSE:
+                    removePower = DefenseStancePower.ID_NAME;
+                    applyPower = new OffenseStancePower(p);
                     break;
-                case DEFENCE:
-                    removePower = OffenceStancePower.ID_NAME;
-                    applyPower = new DefenceStancePower(p);
+                case DEFENSE:
+                    removePower = OffenseStancePower.ID_NAME;
+                    applyPower = new DefenseStancePower(p);
                     break;
             }
             if (p.hasPower(removePower)) AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.p, this.p, removePower));

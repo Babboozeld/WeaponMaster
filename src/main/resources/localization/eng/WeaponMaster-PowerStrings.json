@@ -1,7 +1,7 @@
 {
-    "WeaponMaster:OffenceStancePower": {
-        "NAME": "Offence Stance",
-        "DESCRIPTIONS": ["Allows you to use the offence action on cards."]
+    "WeaponMaster:OffenseStancePower": {
+        "NAME": "Offense Stance",
+        "DESCRIPTIONS": ["Allows you to use the offense action on cards."]
     },
     "WeaponMaster:FeintPower": {
         "NAME": "Feint",
@@ -9,10 +9,10 @@
     },
     "WeaponMaster:TheHighGroundPower": {
         "NAME": "The High Ground ",
-        "DESCRIPTIONS": ["When in offence gain 3 block for every attack."]
+        "DESCRIPTIONS": ["When in Offense stance, gain 3 block for each attack you play."]
     },
-    "WeaponMaster:DefenceStancePower": {
-        "NAME": "Defence Stance",
-        "DESCRIPTIONS": ["Allows you to use the defence action on cards."]
+    "WeaponMaster:DefenseStancePower": {
+        "NAME": "Defense Stance",
+        "DESCRIPTIONS": ["Allows you to use the defense action on cards."]
     }
 }

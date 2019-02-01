@@ -33,7 +33,7 @@ import weaponmaster.cards.Strike;
 import weaponmaster.patches.AbstractCardEnum;
 import weaponmaster.patches.PlayerClassEnum;
 import weaponmaster.patches.WeaponMasterEnum;
-import weaponmaster.powers.OffenceStancePower;
+import weaponmaster.powers.OffenseStancePower;
 import weaponmaster.relics.PlayerEquipment;
 
 public class WeaponMasterPlayer extends CustomPlayer {
@@ -78,7 +78,7 @@ public class WeaponMasterPlayer extends CustomPlayer {
     };
     public static final String ORBVFX_LOCATION = "orb/vfx.png";
 
-    public Stance stance = Stance.OFFENCE;
+    public Stance stance = Stance.OFFENSE;
 
     public WeaponMasterPlayer(String name, PlayerClass setClass) {
         super(name, setClass, ORBTEXTURES, PLAYER_TEXTURES_LOCATION + ORBVFX_LOCATION, null,  new SpriterAnimation( //));
@@ -214,8 +214,8 @@ public class WeaponMasterPlayer extends CustomPlayer {
     @Override
     public void preBattlePrep() {
         super.preBattlePrep();
-        this.stance = Stance.OFFENCE;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new OffenceStancePower(this), 0));
+        this.stance = Stance.OFFENSE;
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new OffenseStancePower(this), 0));
     }
 
 }
