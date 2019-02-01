@@ -22,7 +22,7 @@ public class StanceSwitch extends CustomCard {
     public static final String UPGRADE_DESCRIPTION = CARD_STRINGS.UPGRADE_DESCRIPTION;
     private static final AbstractCard.CardType CARD_TYPE = AbstractCard.CardType.SKILL;
     public static final AbstractCard.CardColor CARD_COLOR = AbstractCard.CardColor.RED;
-    private static final AbstractCard.CardRarity CARD_RARITY = AbstractCard.CardRarity.COMMON; 
+    private static final AbstractCard.CardRarity CARD_RARITY = AbstractCard.CardRarity.BASIC; 
     private static final AbstractCard.CardTarget CARD_TARGET = AbstractCard.CardTarget.SELF;
 
     public StanceSwitch() {

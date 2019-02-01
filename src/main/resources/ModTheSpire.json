@@ -2,7 +2,7 @@
     "modid": "weaponmaster",
     "name": "Weapon Master",
     "description": "A mod that adds the Weapon Master character to the game.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "author_list": ["Babboozeld"],
     "dependencies": ["basemod","stslib"]
 }

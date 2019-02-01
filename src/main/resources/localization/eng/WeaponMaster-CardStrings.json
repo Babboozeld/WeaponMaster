@@ -14,7 +14,7 @@
   },
   "WeaponMaster:Smack": {
     "NAME": "Smack",
-    "DESCRIPTION": "Deal !D! damage. NL Offencive stance: Apply !M! Vulnerable. NL Defence stance: Apply !M! Weak."
+    "DESCRIPTION": "Deal !D! damage. NL [#EFC851]Offensive[] [#EFC851]stance:[] Apply !M! Vulnerable. NL [#EFC851]Defensive[] [#EFC851]stance:[] Apply !M! Weak."
   },
   "WeaponMaster:Feint": {
     "NAME": "Feint",
@@ -39,7 +39,7 @@
   },
   "WeaponMaster:TheHighGround": {
     "NAME": "The High Ground",
-    "DESCRIPTION": "When in offencive stance gain !M! Block for every Attack played in a round."
+    "DESCRIPTION": "When in [#EFC851]offensive[] [#EFC851]stance[] gain !M! Block for every Attack played in a round."
   },
   "WeaponMaster:HammerAndAnvil": {
     "NAME": "Hammer and Anvil",
@@ -47,7 +47,7 @@
   },
   "WeaponMaster:Leap": {
     "NAME": "Leap",
-    "DESCRIPTION": "Offencive stance: Deal !D! damage to ALL enemies. NL Defence stance: Deal !D! damage and gain !B! Block. NL Switch_Stance."
+    "DESCRIPTION": "[#EFC851]Offensive[] [#EFC851]stance:[] Deal !D! damage to ALL enemies. NL [#EFC851]Defensive[] [#EFC851]stance:[] Deal !D! damage and gain !B! Block. NL Switch_Stance."
   },
   "WeaponMaster:DefenceIsOffence": {
     "NAME": "Defence is Offence",
@@ -59,8 +59,8 @@
   },
   "WeaponMaster:Pushover": {
     "NAME": "Pushover",
-    "DESCRIPTION": "Deal !D! Damage. NL Offencive stance: Strength counts double.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL Offencive stance: Strength counts triple."
+    "DESCRIPTION": "Deal !D! Damage. NL [#EFC851]Offensive[] [#EFC851]stance:[] Strength counts double.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL [#EFC851]Offensive[] [#EFC851]stance:[] Strength counts triple."
   },
   "WeaponMaster:SpartanKick": {
     "NAME": "Spartan Kick",
@@ -72,8 +72,8 @@
   },
   "WeaponMaster:QuickReflexes": {
     "NAME": "Quick Reflexes",
-    "DESCRIPTION": "Gain !B! Block. NL Defence stance: Dexterity counts double.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Defence stance: Dexterity counts triple."
+    "DESCRIPTION": "Gain !B! Block. NL [#EFC851]Defensive[] [#EFC851]stance:[] Dexterity counts double.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL [#EFC851]Defensive[] [#EFC851]stance:[] Dexterity counts triple."
   },
   "WeaponMaster:WarRations": {
     "NAME": "War Rations",

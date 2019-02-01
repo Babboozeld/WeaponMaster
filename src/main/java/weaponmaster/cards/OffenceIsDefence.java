@@ -21,7 +21,7 @@ public class OffenceIsDefence extends CustomCard {
     public static final String IMG = WeaponMaster.makeResourcePath("cards/placeholder_attack.png");
     private static final int COST = 1;
     public static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
-    private static final AbstractCard.CardType CARD_TYPE = AbstractCard.CardType.ATTACK;
+    private static final AbstractCard.CardType CARD_TYPE = AbstractCard.CardType.SKILL;
     public static final AbstractCard.CardColor CARD_COLOR = AbstractCardEnum.WEAPONMASTER_COLOR;
     private static final AbstractCard.CardRarity CARD_RARITY = AbstractCard.CardRarity.COMMON;
     private static final AbstractCard.CardTarget CARD_TARGET = AbstractCard.CardTarget.SELF;
